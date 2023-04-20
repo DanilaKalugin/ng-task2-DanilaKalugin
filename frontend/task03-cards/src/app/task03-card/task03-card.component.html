@@ -1,0 +1,20 @@
+<div class="flipper" (click)="toggle()" [ngClass]="{'hover': isFlipped}">
+    <div class="item_front">
+        <div class="item-content">
+            <div class="close" (click)="remove()"></div>
+            <div class="name">{{term.title}}</div>
+        </div>
+      </div>
+      <div class="item_back">
+        <div class="item-content">
+            <div class="close"></div>
+            <div class="name">{{term.title}}</div>
+            <div class="description">
+                {{term.description}}
+            </div>
+        </div>
+      </div>
+</div>
+
+
+

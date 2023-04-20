@@ -1,0 +1,11 @@
+<div class="list">
+  <app-task03-card
+    *ngFor="let t of cardsList; let i = index"
+    [term]="t"
+    [index]="i"
+    (flipCard)="changeFlippedCard($event)"
+    (removeCard)="removeCard($event)";
+    [isFlipped]="selectedItem === i"
+    [animationIsActive]="animationInProgress">
+  </app-task03-card>
+</div>
