@@ -1,11 +1,13 @@
+<button (click)="openAllCards()">{{allSelected ? 'Закрыть': 'Открыть'}} все</button>
 <div class="list">
   <app-task03-card
-    *ngFor="let t of cardsList; let i = index"
+    *ngFor="let t of cards; let i = index"
     [term]="t"
     [index]="i"
     (flipCard)="changeFlippedCard($event)"
-    (removeCard)="removeCard($event)";
-    [isFlipped]="selectedItem === i"
-    [animationIsActive]="animationInProgress">
+    (removeCard)="removeCard($event)"
+    [isFlipped]="allSelected || selectedItems.includes(t.id!)"
+    [animationIsActive]="animationInProgress"
+  >
   </app-task03-card>
 </div>

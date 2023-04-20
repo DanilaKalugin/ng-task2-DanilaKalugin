@@ -1,5 +1,5 @@
 <div class="container">
     <app-task03-add (add)="addCard($event)"></app-task03-add>
 </div>
-<app-task03-cards-list [cards]="cardList" (cardRemoved)="removeCard($event)"></app-task03-cards-list>
+<app-task03-cards-list [cards]="cardService.cards" (cardRemoved)="removeCard($event)"></app-task03-cards-list>
 

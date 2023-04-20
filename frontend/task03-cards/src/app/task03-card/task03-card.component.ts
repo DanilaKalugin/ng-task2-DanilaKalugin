@@ -22,7 +22,7 @@ export class Task03CardComponent implements OnInit {
   animationIsActive!: boolean;
 
   @Output()
-  flipCard = new EventEmitter<number>();
+  flipCard = new EventEmitter<string>();
 
   @Output()
   removeCard = new EventEmitter<Card>();
@@ -35,12 +35,7 @@ export class Task03CardComponent implements OnInit {
     if (this.animationIsActive) {
       return;
     }
-
-    if (!this.isFlipped) {
-      this.flipCard.emit(this.index);
-    } else {
-      this.flipCard.emit(-1);
-    }
+    this.flipCard.emit(this.term.id);
   }
 
   remove(): void {

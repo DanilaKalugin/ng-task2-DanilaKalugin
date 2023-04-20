@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Task03Module } from './task03/task03.module';
-import { Task03CardsListComponent } from './task03-cards-list/task03-cards-list.component';
+import { ICardApiServiceToken } from './shared/interfaces/ICardApiService';
+import { CardApiService } from './shared/services/card-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { Task03CardsListComponent } from './task03-cards-list/task03-cards-list.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Task03Module
+    Task03Module,
+    HttpClientModule
   ],
-  providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

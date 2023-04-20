@@ -89,6 +89,8 @@
 .description {
   max-height: 128px;
   overflow: auto;
+
+  word-break: break-all;
 }
 
 .item_front .item-content {
