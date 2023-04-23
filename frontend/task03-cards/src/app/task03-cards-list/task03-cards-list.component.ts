@@ -22,7 +22,7 @@ export class Task03CardsListComponent implements OnInit {
   constructor(public openCardLoaderService: OpenCardLoaderService) {}
 
   ngOnInit(): void {
-    this.selectedItems = this.openCardLoaderService.loadOpenedCards();
+    this.selectedItems = this.openCardLoaderService.loadOpenedCards() || [];
   }
 
   changeFlippedCard(cardId: string) {

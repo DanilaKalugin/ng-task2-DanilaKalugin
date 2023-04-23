@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class OpenCardLoaderService {
 
-  constructor() { }
+  constructor() { 
+    localStorage.setItem('openCards', JSON.stringify([]));
+  }
 
   saveOpenCards(ids: string[]) {
     localStorage.setItem('openCards', JSON.stringify(ids));
