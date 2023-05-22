@@ -16,14 +16,14 @@ let data: Card[] = [{
   styleUrls: ['./task03.component.scss'],
 })
 export class Task03Component implements OnInit {
-  cardList!: Card[];
+  cardList: Card[];
 
   constructor() {
-   
+    this.cardList = data;
   }
 
   ngOnInit(): void { 
-    this.cardList = data;
+   
   }
 
   addCard(card: Card) {
@@ -31,6 +31,7 @@ export class Task03Component implements OnInit {
   }
 
   removeCard(card: Card) {
-    this.cardList = this.cardList.filter(item => item!== card);
+    const index = this.cardList.indexOf(card);
+    this.cardList.splice(index, 1);
   }
 }
